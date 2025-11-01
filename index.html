@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "container">
+
+    <canvas id = "canvas" width="500px" height="500px">
+
+    </canvas>
+    <div id = "colorpickercontainer">
+        <p>Color Picker</p>
+    <div id ="colorpicker">
+        
+        <label for="red">Red:</label>
+        <input type="range" id = "red" class = "slider" min="0" max = '255' name = "red" placeholder="0">
+        <input type="number" class = "number" id = "redvalue" placeholder="0">
+        <label for="green">Green:</label>
+        <input type="range" id = "green" class = "slider" min="0" max = "255" name = "green" placeholder="0">
+        <input type="number"  class = "number" id = "greenvalue" placeholder="0">
+        <label for="blue">Blue:</label>
+        <input type="range" id = "blue" class = "slider" min="0" max = "255" name = "blue" placeholder="0">
+        <input type="number"  class = "number" id = "bluevalue" placeholder="0">
+        <label for="alpha">Alpha:</label>
+        <input type="range" id = "alpha"  class = "slider" min="0" max = "1" step = "0.01"name = "alpha" placeholder="0" >
+        <input type="number" class = "number" id = "alphavalue" min = "0" max="1" step="0.01" placeholder="0">
+        
+    </div>
+    <div id ="colorpreview"></div>
+    </div>
+    </div>
+    <!--<script src="/socket.io/socket.io.js"></script>-->
+    <script src="app.js"></script>
+</body>
+</html>
