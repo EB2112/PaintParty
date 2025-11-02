@@ -1,3 +1,17 @@
+<!--potential site names:
+    paintparty
+    sketchsocial
+    tothedrawingboard-->
+
+
+<!--
+    TODO:
+    canvas resizing option ✅
+    undo button
+    brush size selector✅
+    chat box
+    refactor rect
+    -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +22,28 @@
 </head>
 <body>
     <div id = "container">
-
+        <div id = "toolscontainer">
+            <p>Tools</p>
+            <div id = "tools">
+                <button value="freedraw" class = "tool">Free Draw</button>
+                <button value="line" class = "tool">Line</button>
+                <button value="rect" class = "tool">Rectangle</button>
+            </div>
+            <div id="options">
+            <button value="reset"  id ="resetbutton">Reset</button>
+            <label for="canvassize">Change canvas size:</label>
+            <select name="canvassize" id="canvassize">
+                <option value = "500" selected >500</option>
+                <option value = "600">600</option>
+                <option value="700">700</option>
+                <option value="800">800</option>
+                <option value="900">900</option>
+                <option value="1000">1000</option>
+            </select>
+            <label for="thickness">Brush size: <span id="brushsize">5</span></label>
+            <input id= "thickness" name = "thickness" type="range" min ="1" max="25">
+        </div>
+        </div>
     <canvas id = "canvas" width="500px" height="500px">
 
     </canvas>
@@ -17,23 +52,23 @@
     <div id ="colorpicker">
         
         <label for="red">Red:</label>
-        <input type="range" id = "red" class = "slider" min="0" max = '255' name = "red" placeholder="0">
-        <input type="number" class = "number" id = "redvalue" placeholder="0">
+        <input type="range" id = "red" class = "slider"  max = '255' name = "red" >
+        <input type="number" class = "number" id = "redvalue" >
         <label for="green">Green:</label>
-        <input type="range" id = "green" class = "slider" min="0" max = "255" name = "green" placeholder="0">
-        <input type="number"  class = "number" id = "greenvalue" placeholder="0">
+        <input type="range" id = "green" class = "slider"  max = "255" name = "green" >
+        <input type="number"  class = "number" id = "greenvalue" >
         <label for="blue">Blue:</label>
-        <input type="range" id = "blue" class = "slider" min="0" max = "255" name = "blue" placeholder="0">
-        <input type="number"  class = "number" id = "bluevalue" placeholder="0">
+        <input type="range" id = "blue" class = "slider"  max = "255" name = "blue" >
+        <input type="number"  class = "number" id = "bluevalue" >
         <label for="alpha">Alpha:</label>
-        <input type="range" id = "alpha"  class = "slider" min="0" max = "1" step = "0.01"name = "alpha" placeholder="0" >
-        <input type="number" class = "number" id = "alphavalue" min = "0" max="1" step="0.01" placeholder="0">
+        <input type="range" id = "alpha"  class = "slider"  max = "1" step = "0.01"name = "alpha" >
+        <input type="number" class = "number" id = "alphavalue" min = "0" max="1" step="0.01" >
         
     </div>
     <div id ="colorpreview"></div>
     </div>
     </div>
-    <!--<script src="/socket.io/socket.io.js"></script>-->
+    <script src="/socket.io/socket.io.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

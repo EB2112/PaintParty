@@ -1,3 +1,9 @@
+body{
+   font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+button{
+    font-family: inherit;
+}
 #container{
     display: flex;
     border: 1px solid black;
@@ -5,12 +11,30 @@
     align-items: center;
     min-height: 100vh;
 }
-
+#toolscontainer{
+    display: flex;
+    border: 1px solid black;
+     flex-direction: column;
+    
+    align-items: center;
+    height: 500px;
+    width: 200px;
+    margin-right: 1rem;
+}
+#tools{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+#options{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
 #canvas{
     position: relative;
     border: 1px solid black;
-    height: 500px;
-    width: 500px;
+    min-height: 500px;
+    min-width: 500px;
     
 }
 
@@ -31,6 +55,7 @@
    flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-left: 1rem;
 }
 #colorpreview{
     border: 1px solid black;

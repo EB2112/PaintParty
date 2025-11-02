@@ -24,7 +24,7 @@ const app = express();
 const server = http.createServer(app); // important for Socket.IO
 const io = new Server(server);
 
-const port = 5000;
+const port = 3000;
 
 // Serve static files (so index.html and script.js can be loaded)
 app.use(express.static(__dirname));
@@ -34,23 +34,29 @@ app.get('/', (req, res) => {
 });
 
 io.on("connection", (socket) =>{
-    console.log(`user connected: ${socket.id}`)
+    console.log(`user connected: ${socket.id}`);
 
     // socket.on("test", (data) =>{
     // console.log(`test`)});
 
     socket.on("draw", (data) =>{
-    console.log(`user drawing ${data}`)
-    socket.broadcast.emit("draw", data)
+    console.log(`user drawing ${data}`);
+    socket.broadcast.emit("draw", data);
+
+   
+
+    
+    });
+     socket.on('reset' ,()=>{
+      socket.broadcast.emit('reset')
+    });
+    socket.on('size' ,(canvasSize)=>{
+      console.log("user changed size")
+      socket.broadcast.emit('size', canvasSize)
+    });
 });
-});
 
 
-
-
-io.on("test", (data) =>{
-    console.log(`${data}`)
-})
 
 // Start the server
 server.listen(port, () => {
